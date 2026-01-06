@@ -1,0 +1,60 @@
+# Artifacts and data
+artifacts/*
+logs/*
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# DVC
+.dvc/
+.dvc.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.zip
+*.tar.gz
+templets/index.html

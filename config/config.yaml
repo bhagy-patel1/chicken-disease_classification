@@ -1,0 +1,7 @@
+artifacts_root: d:/deep_learning/chicken_dieases_classification/artifacts
+
+data_ingestion:
+  root_dir: d:/deep_learning/chicken_dieases_classification/artifacts/data_ingestion
+  source_URL: https://github.com/entbappy/Branching-tutorial/raw/master/Chicken-fecal-images.zip
+  local_data_file: d:/deep_learning/chicken_dieases_classification/artifacts/data_ingestion/chicken-diseases-image-dataset.zip
+  unzipped_data_dir: d:/deep_learning/chicken_dieases_classification/artifacts/data_ingestion/chicken-diseases-image-dataset
