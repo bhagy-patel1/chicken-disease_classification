@@ -1,8 +1,8 @@
 from pathlib import Path
 from ..contants import *
 from ..utils.common import read_yaml, create_directories
-from ..entities.config_entity import DataIngestionConfig, PrepareBaseModelConfig
-
+from ..entities.config_entity import DataIngestionConfig, PrepareBaseModelConfig, preparecallbacksconfig
+import os
 
 class ConfigurationManager:
     def __init__(self,
@@ -42,3 +42,20 @@ class ConfigurationManager:
         )
         create_directories([prepare_base_model_config.root_dir])
         return prepare_base_model_config
+    def get_prepare_callbacks_config(self) -> preparecallbacksconfig:
+        prepare_callbacks_config = self.config.prepare_callbacks
+        artifacts_root = self.config.artifacts_root
+
+        root_dir = os.path.join(artifacts_root, prepare_callbacks_config.root_dir)
+        tensorboard_log_dir = os.path.join(artifacts_root, prepare_callbacks_config.tensorboard_log_dir)
+        checkpoint_model_filepath = os.path.join(artifacts_root, prepare_callbacks_config.checkpoint_model_filepath)
+
+        create_directories([root_dir, tensorboard_log_dir, os.path.dirname(checkpoint_model_filepath)])
+
+        prepare_callbacks_config = preparecallbacksconfig(
+            root_dir=root_dir,
+            tensorboard_log_dir=tensorboard_log_dir,
+            checkpoint_model_filepath=checkpoint_model_filepath
+        )
+
+        return prepare_callbacks_config
