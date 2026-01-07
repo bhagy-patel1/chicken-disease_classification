@@ -36,3 +36,12 @@ class TrainConfig:
     param_image_size: list
     param_is_augmentation: bool
 
+@dataclass
+class EvaluationConfig:
+    path_of_model: Path
+    path_of_test_data: Path
+    all_params: dict
+    params_image_size: list
+    params_batch_size: int
+
+
