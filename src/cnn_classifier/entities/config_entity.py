@@ -19,9 +19,20 @@ class PrepareBaseModelConfig:
     params_include_top: bool
     params_weights: str
     params_classes: int
-    
+
 @dataclass
 class preparecallbacksconfig:
-    callbacks_dir: Path
+    root_dir: Path
     tensorboard_log_dir: Path
     checkpoint_model_filepath: Path
+@dataclass
+class TrainConfig:
+    root_dir: Path
+    trained_model_path: Path
+    updated_base_model_path: Path
+    trainng_data_path: Path
+    param_epochs: int
+    param_batch_size: int
+    param_image_size: list
+    param_is_augmentation: bool
+

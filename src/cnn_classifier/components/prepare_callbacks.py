@@ -8,20 +8,20 @@ from cnn_classifier.utils.common import read_yaml
 from cnn_classifier.utils.common import create_directories
 
 class PrepareCallbacksConfig:
-    def __init__(self, config:dict = read_yaml(CONFIG_FILE_PATH)):
+    def __init__(self, config):
         self.config = config
-        self.prepare_callbacks_config = self.config['prepare_callbacks_config']
-        create_directories([self.prepare_callbacks_config['callbacks_dir']])
+        create_directories([self.config.root_dir])
         
     def create_time_stamped_dir(self):
         time_stamp = time.strftime("%Y%m%d-%H%M%S")
         tensorboard_log_dir = os.path.join(
-            self.prepare_callbacks_config['tensorboard_log_dir'], time_stamp
+            self.config.tensorboard_log_dir, time_stamp
         )
         return tensorboard_log_dir
+    
     def create_checkpoint_filepath(self):
         checkpoint_model_filepath = os.path.join(
-            self.prepare_callbacks_config['checkpoint_model_filepath'], 'cp-{epoch:04d}.ckpt'
+            self.config.checkpoint_model_filepath, 'cp-{epoch:04d}.weights.h5'
         )
         return checkpoint_model_filepath
     def get_callbacks(self):

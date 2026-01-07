@@ -16,3 +16,8 @@ prepare_callbacks:
   root_dir: d:/deep_learning/chicken_dieases_classification/artifacts/prepare_callbacks
   tensorboard_log_dir: d:/deep_learning/chicken_dieases_classification/artifacts/prepare_callbacks/tensorboard_logs
   checkpoint_model_filepath: d:/deep_learning/chicken_dieases_classification/artifacts/prepare_callbacks/checkpoints/model.h5
+
+training:
+  root_dir: d:/deep_learning/chicken_dieases_classification/artifacts/training
+  trained_model_path: d:/deep_learning/chicken_dieases_classification/artifacts/training/trained_model.h5
+  updated_base_model_path: d:/deep_learning/chicken_dieases_classification/artifacts/prepare_base_model/updated_base_model.h5

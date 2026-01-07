@@ -1,7 +1,7 @@
 from pathlib import Path
 from ..contants import *
 from ..utils.common import read_yaml, create_directories
-from ..entities.config_entity import DataIngestionConfig, PrepareBaseModelConfig, preparecallbacksconfig
+from ..entities.config_entity import DataIngestionConfig, PrepareBaseModelConfig, preparecallbacksconfig, TrainConfig
 import os
 
 class ConfigurationManager:
@@ -59,3 +59,22 @@ class ConfigurationManager:
         )
 
         return prepare_callbacks_config
+
+    def get_train_config(self) -> TrainConfig:
+        training = self.config['training']
+        artifacts_root = self.config['artifacts_root']
+        params = self.params
+        training_data = self.config['data_ingestion']['unzipped_data_dir']
+        root_dir = os.path.join(artifacts_root, training['root_dir'])
+
+        training_config = TrainConfig(
+            root_dir=root_dir,
+            trained_model_path=os.path.join(root_dir, training['trained_model_path']),
+            updated_base_model_path=os.path.join(root_dir, training['updated_base_model_path']),
+            trainng_data_path=training_data,
+            param_epochs=params.EPOCHS,
+            param_batch_size=params.BATCH_SIZE,
+            param_image_size=params.IMAGE_SIZE,
+            param_is_augmentation=params.AUGMENTATION
+        )
+        return training_config
