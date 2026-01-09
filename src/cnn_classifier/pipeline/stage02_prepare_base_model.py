@@ -1,3 +1,10 @@
+import sys
+from pathlib import Path
+
+# Add project root to Python path for standalone execution
+project_root = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(project_root / "src"))
+
 from cnn_classifier.config.configuration import ConfigurationManager
 from cnn_classifier.components.prepare_base_model import PrepareBaseModel
 from cnn_classifier import logger

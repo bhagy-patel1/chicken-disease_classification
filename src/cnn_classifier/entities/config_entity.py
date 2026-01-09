@@ -44,4 +44,10 @@ class EvaluationConfig:
     params_image_size: list
     params_batch_size: int
 
+@dataclass
+class PredictionConfig:
+    model_path: Path
+    params_image_size: list
+    class_names: list
+
 

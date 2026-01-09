@@ -1,19 +1,47 @@
-# Artifacts and data
-artifacts/*
-logs/*
+# =============================================================================
+# CHICKEN DISEASE CLASSIFICATION PROJECT - .gitignore
+# =============================================================================
 
-# Virtual environments
-.venv/
-venv/
-env/
-ENV/
-.env
+# =============================================================================
+# ML ARTIFACTS & DATA (LARGE FILES - USE DVC INSTEAD)
+# =============================================================================
+artifacts/
+logs/
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.model
+*.weights
+*.ckpt
+*.pb
+*.tflite
+*.onnx
 
-# Python
+# Dataset files (managed by DVC)
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+data/
+datasets/
+raw_data/
+processed_data/
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+# C extensions
 *.so
+
+# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -34,27 +62,310 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# IDE
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+myenv/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# =============================================================================
+# MACHINE LEARNING SPECIFIC
+# =============================================================================
+# TensorFlow
+*.tfevents.*
+checkpoint
+*.ckpt.*
+*.meta
+*.index
+*.data-*
+saved_model/
+tensorboard_logs/
+
+# PyTorch
+*.pth
+*.pt
+
+# Scikit-learn
+*.joblib
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Weights & Biases
+wandb/
+
+# Experiment tracking
+experiments/
+runs/
+outputs/
+
+# Model checkpoints
+checkpoints/
+*.checkpoint
+
+# =============================================================================
+# DVC (DATA VERSION CONTROL)
+# =============================================================================
+/artifacts.dvc
+/data.dvc
+.dvc/tmp
+.dvcignore
+
+# =============================================================================
+# IDE & EDITORS
+# =============================================================================
+# VSCode
 .vscode/
+*.code-workspace
+
+# PyCharm
 .idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
 *.swp
 *.swo
 *~
-.DS_Store
 
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
 
-# DVC
-.dvc/
-.dvc.lock
-
-# OS
-.DS_Store
+# =============================================================================
+# OPERATING SYSTEM
+# =============================================================================
+# Windows
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
 
-# Project specific
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# WEB APPLICATION
+# =============================================================================
+# Node modules (if using any frontend tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Static files
+staticfiles/
+static/
+
+# Media files
+media/
+
+# =============================================================================
+# PROJECT SPECIFIC
+# =============================================================================
+# Uploaded files (keep sample images but ignore user uploads)
+uploads/*
+!uploads/sample_*
+!uploads/.gitkeep
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Configuration files with secrets
+secrets.yaml
+.secrets
+config/secrets/
+
+# Local development files
+local_settings.py
+.local
+*.local
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Test files (keep main test files, ignore temporary ones)
+test_*.py
+!test_complete_pipeline.py
+!test_data_loading.py
+
+# Debug files
+debug_*
+*.debug
+
+# Cache directories
+.cache/
+cache/
+
+# =============================================================================
+# DOCUMENTATION
+# =============================================================================
+# Generated documentation
+docs/_build/
+docs/build/
+site/
+
+# =============================================================================
+# MISC
+# =============================================================================
+# Compressed files
 *.zip
 *.tar.gz
-templets/index.html
+*.tar.bz2
+*.tar.xz
+*.tgz
+*.rar
+*.7z
+
+# Log files
+*.log
+logs/
+log/
+
+# Lock files
+*.lock
+.lock
+
+# Temporary directories
+.tmp/
+.temp/

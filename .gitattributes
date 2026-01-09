@@ -1,0 +1,167 @@
+# =============================================================================
+# CHICKEN DISEASE CLASSIFICATION PROJECT - .gitattributes
+# =============================================================================
+
+# =============================================================================
+# AUTO DETECT TEXT FILES AND PERFORM LF NORMALIZATION
+# =============================================================================
+* text=auto
+
+# =============================================================================
+# TEXT FILES - FORCE LF LINE ENDINGS
+# =============================================================================
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.xml text eol=lf
+*.csv text eol=lf
+*.tsv text eol=lf
+*.sql text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# =============================================================================
+# CONFIGURATION FILES
+# =============================================================================
+*.cfg text eol=lf
+*.conf text eol=lf
+*.config text eol=lf
+*.ini text eol=lf
+*.toml text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.dvcignore text eol=lf
+Dockerfile text eol=lf
+requirements.txt text eol=lf
+setup.py text eol=lf
+setup.cfg text eol=lf
+pyproject.toml text eol=lf
+Pipfile text eol=lf
+
+# =============================================================================
+# JUPYTER NOTEBOOKS - TREAT AS TEXT BUT WITH SPECIAL HANDLING
+# =============================================================================
+*.ipynb text eol=lf
+
+# =============================================================================
+# BINARY FILES - DO NOT MODIFY
+# =============================================================================
+# Images
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.bmp binary
+*.tiff binary
+*.tif binary
+*.ico binary
+*.svg binary
+*.webp binary
+
+# Machine Learning Models
+*.h5 binary
+*.hdf5 binary
+*.pkl binary
+*.pickle binary
+*.joblib binary
+*.model binary
+*.weights binary
+*.ckpt binary
+*.pb binary
+*.tflite binary
+*.onnx binary
+*.pth binary
+*.pt binary
+
+# Archives
+*.zip binary
+*.tar binary
+*.tar.gz binary
+*.tar.bz2 binary
+*.tar.xz binary
+*.tgz binary
+*.rar binary
+*.7z binary
+*.gz binary
+*.bz2 binary
+*.xz binary
+
+# Documents
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+*.ppt binary
+*.pptx binary
+
+# Audio/Video
+*.mp3 binary
+*.mp4 binary
+*.avi binary
+*.mov binary
+*.wav binary
+*.flac binary
+*.ogg binary
+
+# Executables
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.app binary
+
+# =============================================================================
+# LANGUAGE SPECIFIC ATTRIBUTES
+# =============================================================================
+# Python
+*.py linguist-language=Python
+
+# Jupyter Notebooks
+*.ipynb linguist-language=Jupyter-Notebook
+
+# HTML/CSS/JS
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+*.js linguist-language=JavaScript
+
+# Configuration
+*.yaml linguist-language=YAML
+*.yml linguist-language=YAML
+*.json linguist-language=JSON
+
+# =============================================================================
+# DIFF SETTINGS
+# =============================================================================
+# Python files - use Python-specific diff
+*.py diff=python
+
+# Jupyter notebooks - use special notebook diff if available
+*.ipynb diff=jupyternotebook
+
+# =============================================================================
+# MERGE SETTINGS
+# =============================================================================
+# Don't merge generated files
+*.log merge=ours
+*.tmp merge=ours
+
+# =============================================================================
+# EXPORT-IGNORE (FILES TO EXCLUDE FROM ARCHIVES)
+# =============================================================================
+.gitattributes export-ignore
+.gitignore export-ignore
+.github/ export-ignore
+.vscode/ export-ignore
+.idea/ export-ignore
+*.md export-ignore
+tests/ export-ignore
+docs/ export-ignore

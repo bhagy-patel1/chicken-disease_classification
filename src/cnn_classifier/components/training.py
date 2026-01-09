@@ -14,7 +14,7 @@ class Training:
         self.model = tf.keras.models.load_model(self.config.updated_base_model_path)
         # Recreate and compile a fresh optimizer so optimizer variables match the model's trainable variables
         self.model.compile(optimizer=tf.keras.optimizers.Adam(),
-                           loss='sparse_categorical_crossentropy',
+                           loss='categorical_crossentropy',  # Changed from sparse_categorical_crossentropy
                            metrics=['accuracy'])
         print(self.model.summary())
 
